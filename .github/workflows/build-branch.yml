@@ -316,6 +316,7 @@ jobs:
           additional-assets-dir: ./deployments/aio/community/dist
           build-args: |
             PLANE_VERSION=${{ steps.prepare_aio_assets.outputs.AIO_BUILD_VERSION }}
+            DOCKERHUB_USER=${{ vars.DOCKER_IMAGE_OWNER || github.repository_owner }}
 
   upload_build_assets:
     name: Upload Build Assets
